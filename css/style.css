@@ -1,0 +1,20 @@
+#h1 {
+ color: rgb(56, 167, 69);
+}
+
+#body2 {
+    height: 400vh;
+}
+
+::-webkit-scrollbar {
+    width: auto;
+}
+
+::-webkit-scrollbar-track {
+    background: #bbbbbbbb;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #e34343c4;
+}
+
