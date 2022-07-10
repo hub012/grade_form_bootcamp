@@ -82,26 +82,25 @@ class Tabla{
     }
     agregarBotones(){
         let botones_div = document.createElement('div');
-        let eliminar_btn = this.crearBoton('delete', "waves-effect waves-light btn-small", "material-icons left");
+        let eliminar_btn = this.crearBoton('delete', "waves-effect waves-light btn-small", "material-icons center");
+        let editar_btn = this.crearBoton('edit', "waves-effect waves-light btn-small", "material-icons center");
         botones_div.append(eliminar_btn);
-        let eliminar = document.createElement('a');
-        eliminar.classList.add('waves-effect', 'waves-light', 'btn-small');
-        let eliminar_icon = document.createElement('i');
-        eliminar_icon.innerText = "delete";
-        eliminar_icon.classList.add('material-icons', 'left');
-        eliminar.append(eliminar_icon);
-        
+        botones_div.append(editar_btn);
         return botones_div;
     }
 
     crearBoton(tipo_boton, clases_a, clases_i){
         let boton = document.createElement('a');
-        const myArray = clases_a.split(" ");
-        console.log(myArray);
-        boton.classList.add(myArray);
+        const atag_styles = clases_a.split(" ");
+        atag_styles.forEach(element => {
+            boton.classList.add(element);
+        });
         let icono = document.createElement('i');
         icono.innerText = tipo_boton;
-        icono.classList.add(clases_i.trim().split(/\s+/));
+        const itag_styles = clases_i.split(" ");
+        itag_styles.forEach(element => {
+            icono.classList.add(element);
+        });
         boton.append(icono);
         return boton;
     }
