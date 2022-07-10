@@ -20,34 +20,57 @@ class Estudiante {
 }
 
 //crear tablas
+class Tabla{
+    constructor(){
+        this.table = document.createElement('table');
+        this.thead = document.createElement('thead');
+        this.tbody = document.createElement('tbody');
+    }
+    
+    crearTabla(){
+        this.table.append(this.thead);
+        this.table.append( this.tbody);
 
-let table = document.createElement('table');
-let thead = document.createElement('thead');
-let tbody = document.createElement('tbody');
+        // Agrega toda la tabla a la etiqueta del cuerpo.
+        document.getElementById('body').append(this.table);
+    }
+    
+    agregarCabecera(){
+        let row_1 = document.createElement('tr');
+        let heading_1 = document.createElement('th');
+        heading_1.innerText = "Nombre";
+        let heading_2 = document.createElement('th');
+        heading_2.innerText = "Apellido";
+        let heading_3 = document.createElement('th');
+        heading_3.innerText = "Matricula";
+        let heading_4 = document.createElement('th');
+        heading_4.innerText = "Nota";
+        let heading_5 = document.createElement('th');
+        heading_5.innerText = "Botones de Accion";
 
-table.appendChild(thead);
-table.appendChild(tbody);
+        row_1.appendChild(heading_1);
+        row_1.appendChild(heading_2);
+        row_1.appendChild(heading_3);
+        row_1.appendChild(heading_4);
+        row_1.appendChild(heading_5);
+        this.thead.appendChild(row_1);
+    }
 
-// Agrega toda la tabla a la etiqueta del cuerpo.
-document.getElementById('body').appendChild(table);
+    agregarFila(estudiante){
 
-let row_1 = document.createElement('tr');
-let heading_1 = document.createElement('th');
-heading_1.innerText = "Nombre";
-let heading_2 = document.createElement('th');
-heading_2.innerText = "Apellido";
-let heading_3 = document.createElement('th');
-heading_3.innerText = "Matricula";
-let heading_4 = document.createElement('th');
-heading_4.innerText = "Nota";
-let heading_5 = document.createElement('th');
-heading_4.innerText = "Botones de Accion";
+    }
 
-row_1.appendChild(heading_1);
-row_1.appendChild(heading_2);
-row_1.appendChild(heading_3);
-row_1.appendChild(heading_4);
-thead.appendChild(row_1);
+    editarFila(estudiante){
 
-// creamos ejemplos de estudiantes.
+    }
 
+    eliminarFila(estudiante){
+
+    }
+}
+
+const tabla = new Tabla();
+tabla.crearTabla();
+tabla.agregarCabecera();
+const estudiante = new Estudiante("lol", "lol", "90", "90");
+tabla.agregarFila(estudiante);
