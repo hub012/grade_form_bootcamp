@@ -10,7 +10,6 @@
 
 let notas=[];
 
-
 class Estudiante {
     constructor(nombre, apellido,matricula, nota){
         this.nombre=nombre;
@@ -29,21 +28,24 @@ let tbody = document.createElement('tbody');
 table.appendChild(thead);
 table.appendChild(tbody);
 
-// Adding the entire table to the body tag
+// Agrega toda la tabla a la etiqueta del cuerpo.
 document.getElementById('body').appendChild(table);
 
 let row_1 = document.createElement('tr');
 let heading_1 = document.createElement('th');
-heading_1.innerHTML = "Nombre";
+heading_1.innerText = "Nombre";
 let heading_2 = document.createElement('th');
-heading_2.innerHTML = "Apellido";
+heading_2.innerText = "Apellido";
 let heading_3 = document.createElement('th');
-heading_3.innerHTML = "Matricula";
+heading_3.innerText = "Matricula";
 let heading_4 = document.createElement('th');
-heading_4.innerHTML = "Nota";
+heading_4.innerText = "Nota";
 
 row_1.appendChild(heading_1);
 row_1.appendChild(heading_2);
 row_1.appendChild(heading_3);
 row_1.appendChild(heading_4);
 thead.appendChild(row_1);
+
+// creamos ejemplos de estudiantes.
+
