@@ -57,7 +57,53 @@ class Tabla{
     }
 
     agregarFila(estudiante){
+        let row = document.createElement('tr');
+        let row_data_1 = document.createElement('td');
+        row_data_1.innerText = estudiante.nombre;
+        let row_data_2 = document.createElement('td');
+        row_data_2.innerText = estudiante.apellido;
+        let row_data_3 = document.createElement('td');
+        row_data_3.innerText = estudiante.matricula;
+        let row_data_4 = document.createElement('td');
+        row_data_4.innerText = estudiante.nota;
 
+        //botones
+        let row_data_5 = document.createElement('td');
+        row_data_5.append(this.agregarBotones());
+        
+        
+
+        row.appendChild(row_data_1);
+        row.appendChild(row_data_2);
+        row.appendChild(row_data_3);
+        row.appendChild(row_data_4);
+        row.appendChild(row_data_5);
+        this.tbody.appendChild(row);
+    }
+    agregarBotones(){
+        let botones_div = document.createElement('div');
+        let eliminar_btn = this.crearBoton('delete', "waves-effect waves-light btn-small", "material-icons left");
+        botones_div.append(eliminar_btn);
+        let eliminar = document.createElement('a');
+        eliminar.classList.add('waves-effect', 'waves-light', 'btn-small');
+        let eliminar_icon = document.createElement('i');
+        eliminar_icon.innerText = "delete";
+        eliminar_icon.classList.add('material-icons', 'left');
+        eliminar.append(eliminar_icon);
+        
+        return botones_div;
+    }
+
+    crearBoton(tipo_boton, clases_a, clases_i){
+        let boton = document.createElement('a');
+        const myArray = clases_a.split(" ");
+        console.log(myArray);
+        boton.classList.add(myArray);
+        let icono = document.createElement('i');
+        icono.innerText = tipo_boton;
+        icono.classList.add(clases_i.trim().split(/\s+/));
+        boton.append(icono);
+        return boton;
     }
 
     editarFila(estudiante){
