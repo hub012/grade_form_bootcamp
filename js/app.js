@@ -40,6 +40,8 @@ let heading_3 = document.createElement('th');
 heading_3.innerText = "Matricula";
 let heading_4 = document.createElement('th');
 heading_4.innerText = "Nota";
+let heading_5 = document.createElement('th');
+heading_4.innerText = "Botones de Accion";
 
 row_1.appendChild(heading_1);
 row_1.appendChild(heading_2);
