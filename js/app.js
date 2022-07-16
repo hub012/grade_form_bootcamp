@@ -29,7 +29,7 @@ class Tabla{
     
     crearTabla(){
         this.table.append(this.thead);
-        this.table.append( this.tbody);
+        this.table.append(this.tbody);
 
         // Agrega toda la tabla a la etiqueta del cuerpo.
         document.getElementById('body').append(this.table);
@@ -57,6 +57,7 @@ class Tabla{
     }
 
     agregarFila(estudiante){
+        console.log(estudiante);
         let row = document.createElement('tr');
         let row_data_1 = document.createElement('td');
         row_data_1.innerText = estudiante.nombre;
@@ -78,6 +79,7 @@ class Tabla{
         row.appendChild(row_data_3);
         row.appendChild(row_data_4);
         row.appendChild(row_data_5);
+        console.log(this.tbody);
         this.tbody.appendChild(row);
     }
     agregarBotones(){
